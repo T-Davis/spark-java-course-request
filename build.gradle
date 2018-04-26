@@ -12,6 +12,9 @@ repositories {
 dependencies {
     compile 'com.sparkjava:spark-core:2.7.2'
 
+    // https://mvnrepository.com/artifact/com.sparkjava/spark-template-handlebars
+    compile group: 'com.sparkjava', name: 'spark-template-handlebars', version: '2.7.1'
+
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
 
