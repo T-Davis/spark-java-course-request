@@ -56,6 +56,12 @@ public class Main {
             return null;
         });
 
+        get("ideas/:slug", (rq, rs) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("idea", dao.findBySlug(rq.params("slug")));
+            return new ModelAndView(model, "idea.hbs");
+        }, new HandlebarsTemplateEngine());
+
         post("/ideas/:slug/vote", (rq, rs) -> {
             CourseIdea idea = dao.findBySlug(rq.params("slug"));
             idea.addVoter(rq.attribute("username"));
